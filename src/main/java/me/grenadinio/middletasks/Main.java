@@ -8,6 +8,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         this.getCommand("btp").setExecutor(new CommandBTP());
         this.getCommand("sethealth").setExecutor(new CommandSetHealth());
+        this.getCommand("showtext").setExecutor(new CommandShowText());
         getServer().getPluginManager().registerEvents(new EventListener(), this);
     }
 

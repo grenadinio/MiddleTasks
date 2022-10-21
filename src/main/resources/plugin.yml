@@ -10,3 +10,7 @@ commands:
     description: Heals you
     usage: /<command> amount
     permission: middletaskplugin.sethealth
+  showtext:
+    description: Shows text on your screen
+    usage: /<command> text1 text2
+    permission: middletaskplugin.showtext
