@@ -1,0 +1,35 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'java'
+}
+
+configurations {
+    embed
+    implementation.extendsFrom(embed)
+}
+group 'grenadinio.plugin.middletasks'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    compileOnly 'org.spigotmc:spigot-api:1.16.2-R0.1-SNAPSHOT'
+    embed 'org.mongodb:mongo-java-driver:3.12.11'
+}
+
+task shadeJar(type: ShadowJar) {
+    archiveClassifier.set('final')
+    mergeServiceFiles()
+    from zipTree("$buildDir/libs/MiddleTasks-1.0.jar")
+    configurations = [project.configurations.embed]
+}
+
+build.finalizedBy("shadeJar")
