@@ -1,0 +1,8 @@
+name: MiddleTasks
+main: me.grenadinio.middletasks.Main
+version: 1.0
+commands:
+  btp:
+    description: Teleports you to golder or diamond block
+    usage: /<command> gold|diamond
+    permission: middletasksplugin.btp

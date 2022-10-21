@@ -25,6 +25,13 @@ dependencies {
     embed 'org.mongodb:mongo-java-driver:3.12.11'
 }
 
+tasks.with {
+    withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+        options.compilerArgs << '-Xlint:none'
+    }
+}
+
 task shadeJar(type: ShadowJar) {
     archiveClassifier.set('final')
     mergeServiceFiles()
