@@ -17,10 +17,10 @@ public class EventListener implements Listener {
 
     @EventHandler
     public void onPlayerJoined(PlayerJoinEvent event){
-        ItemStack diamond_block = new ItemStack(Material.DIAMOND_BLOCK,1);
-        ItemStack gold_block = new ItemStack(Material.GOLD_BLOCK,1);
+        ItemStack diamondBlock = new ItemStack(Material.DIAMOND_BLOCK,1);
+        ItemStack goldBlock = new ItemStack(Material.GOLD_BLOCK,1);
 
-        event.getPlayer().getInventory().addItem(diamond_block,gold_block);
+        event.getPlayer().getInventory().addItem(diamondBlock,goldBlock);
     }
 
     @EventHandler
