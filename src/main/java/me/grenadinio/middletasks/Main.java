@@ -21,6 +21,7 @@ public class Main extends JavaPlugin {
         this.getCommand("gm").setExecutor(new CommandGm());
         this.getCommand("god").setExecutor(new CommandGod(this));
         this.getCommand("fly").setExecutor(new CommandFly(this));
+        this.getCommand("addeffect").setExecutor(new CommandAddEffect());
         getServer().getPluginManager().registerEvents(new EventListener(this), this);
     }
 
