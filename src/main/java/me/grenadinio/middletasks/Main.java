@@ -9,6 +9,7 @@ public class Main extends JavaPlugin {
     public static Plugin plugin;
 
     public final NamespacedKey GODMODE_KEY = new NamespacedKey(this, "GODMODE_KEY");
+    public final NamespacedKey FLY_KEY = new NamespacedKey(this, "FLY_KEY");
 
     @SuppressWarnings("ConstantConditions")
     @Override
@@ -19,6 +20,7 @@ public class Main extends JavaPlugin {
         this.getCommand("showtext").setExecutor(new CommandShowText());
         this.getCommand("gm").setExecutor(new CommandGm());
         this.getCommand("god").setExecutor(new CommandGod(this));
+        this.getCommand("fly").setExecutor(new CommandFly(this));
         getServer().getPluginManager().registerEvents(new EventListener(this), this);
     }
 

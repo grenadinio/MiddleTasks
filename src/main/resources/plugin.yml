@@ -22,3 +22,7 @@ commands:
     description: God mode
     usage: /<command>
     permission: middletaskplugin.god
+  fly:
+    description: Fly mode
+    usage: /<command> [nick]
+    permission: middletaskplugin.fly
