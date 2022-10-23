@@ -30,3 +30,7 @@ commands:
     description: Adds effect to all online players
     usage: /<command> <effect> <effectAmplifier> <effectDuration>
     permission: middletaskplugin.addeffect
+  getmin:
+    description: Returns minimum
+    usage: /<command> [number1] [number2] [...]
+    permission: middletaskplugin.getmin
