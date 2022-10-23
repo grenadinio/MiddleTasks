@@ -14,3 +14,11 @@ commands:
     description: Shows text on your screen
     usage: /<command> text1 text2
     permission: middletaskplugin.showtext
+  gm:
+    description: Gamemode
+    usage: /<command> <0-3>
+    permission: middletaskplugin.gm
+  god:
+    description: God mode
+    usage: /<command>
+    permission: middletaskplugin.god
