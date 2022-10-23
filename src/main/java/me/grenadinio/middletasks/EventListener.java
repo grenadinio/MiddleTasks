@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
@@ -58,10 +59,22 @@ public class EventListener implements Listener {
     }
 
     @EventHandler
-    public void onEntityDamage(EntityDamageByEntityEvent event) {
+    public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
         if (event.getEntity() instanceof Player
                 && event.getEntity().getPersistentDataContainer().has(plugin.GODMODE_KEY, PersistentDataType.INTEGER)) {
             event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onEntityDamage(EntityDamageEvent event) {
+        if (event.getCause() == EntityDamageEvent.DamageCause.LAVA
+                || event.getCause() == EntityDamageEvent.DamageCause.FIRE
+                || event.getCause() == EntityDamageEvent.DamageCause.FIRE_TICK) {
+            if (event.getEntity() instanceof Player
+                    && event.getEntity().getPersistentDataContainer().has(plugin.GODMODE_KEY, PersistentDataType.INTEGER)) {
+                event.setCancelled(true);
+            }
         }
     }
 }
