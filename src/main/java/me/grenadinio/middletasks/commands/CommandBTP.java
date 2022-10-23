@@ -1,5 +1,6 @@
-package me.grenadinio.middletasks;
+package me.grenadinio.middletasks.commands;
 
+import me.grenadinio.middletasks.MongoConnect;
 import org.bson.Document;
 import org.bukkit.Location;
 import org.bukkit.Material;

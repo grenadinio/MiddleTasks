@@ -1,4 +1,4 @@
-package me.grenadinio.middletasks;
+package me.grenadinio.middletasks.commands;
 
 import org.bukkit.attribute.Attribute;
 import org.bukkit.command.Command;

@@ -1,5 +1,8 @@
 package me.grenadinio.middletasks;
 
+import me.grenadinio.middletasks.commands.CommandBTP;
+import me.grenadinio.middletasks.commands.CommandSetHealth;
+import me.grenadinio.middletasks.commands.CommandShowText;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
