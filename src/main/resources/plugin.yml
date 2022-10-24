@@ -34,3 +34,7 @@ commands:
     description: Returns minimum
     usage: /<command> [number1] [number2] [...]
     permission: middletaskplugin.getmin
+  duplicates:
+    description: Duplicates
+    usage: /<command> [number1] [number2] [...]
+    permission: middletaskplugin.duplicates
