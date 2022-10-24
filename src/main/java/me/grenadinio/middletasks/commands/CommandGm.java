@@ -24,20 +24,19 @@ public class CommandGm implements CommandExecutor {
         } else {
             if (Objects.equals(args[0], "0")) {
                 player.setGameMode(GameMode.SURVIVAL);
-                sender.sendMessage(String.format("Игроку %s установлен режим SURVIVAL.", player.getName()));
             } else if (Objects.equals(args[0], "1")) {
                 player.setGameMode(GameMode.CREATIVE);
-                sender.sendMessage(String.format("Игроку %s установлен режим CREATIVE.", player.getName()));
             } else if (Objects.equals(args[0], "2")) {
                 player.setGameMode(GameMode.ADVENTURE);
-                sender.sendMessage(String.format("Игроку %s установлен режим ADVENTURE.", player.getName()));
             } else if (Objects.equals(args[0], "3")) {
                 player.setGameMode(GameMode.SPECTATOR);
-                sender.sendMessage(String.format("Игроку %s установлен режим SPECTATOR.", player.getName()));
             } else {
                 sender.sendMessage("Wrong argument. Usage: /gm <0-3>");
+                return true;
             }
         }
+
+        sender.sendMessage(String.format("Игроку %s установлен режим %s", player.getName(), player.getGameMode()));
 
         return true;
     }
