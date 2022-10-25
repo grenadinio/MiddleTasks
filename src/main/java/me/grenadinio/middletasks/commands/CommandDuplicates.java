@@ -20,14 +20,18 @@ public class CommandDuplicates implements CommandExecutor {
         if (args.length == 0) {
             sender.sendMessage("Укажите аргументы.");
         } else {
-            Set<Integer> duplicates = new HashSet<>();
-            Set<Integer> uniques = new HashSet<>();
-            Arrays.stream(args).mapToInt(Integer::parseInt).forEach((Integer) -> {
-                if (!uniques.add(Integer)) {
-                    duplicates.add(Integer);
-                }
-            });
-            sender.sendMessage(String.format("Повторяющиеся: %s", duplicates));
+            try {
+                Set<Integer> duplicates = new HashSet<>();
+                Set<Integer> uniques = new HashSet<>();
+                Arrays.stream(args).mapToInt(Integer::parseInt).forEach((someInt) -> {
+                    if (!uniques.add(someInt)) {
+                        duplicates.add(someInt);
+                    }
+                });
+                sender.sendMessage(String.format("Повторяющиеся: %s", duplicates));
+            } catch (NumberFormatException e) {
+                sender.sendMessage("Неверно введена команда.");
+            }
         }
         return true;
     }
