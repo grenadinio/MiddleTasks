@@ -24,6 +24,8 @@ public class Main extends JavaPlugin {
         this.getCommand("addeffect").setExecutor(new CommandAddEffect());
         this.getCommand("getmin").setExecutor(new CommandGetMin());
         this.getCommand("duplicates").setExecutor(new CommandDuplicates());
+        this.getCommand("addnum").setExecutor(new CommandAddNum());
+        this.getCommand("getnum").setExecutor(new CommandGetNum());
         getServer().getPluginManager().registerEvents(new EventListener(this), this);
     }
 

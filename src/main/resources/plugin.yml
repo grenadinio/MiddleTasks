@@ -38,3 +38,11 @@ commands:
     description: Duplicates
     usage: /<command> [number1] [number2] [...]
     permission: middletaskplugin.duplicates
+  addnum:
+    description: Adds number to list
+    usage: /<command> <number>
+    permission: middletasksplugin.addnum
+  getnum:
+    description: Gets number from list
+    usage: /<command> <number>
+    permission: middletasksplugin.getnum
