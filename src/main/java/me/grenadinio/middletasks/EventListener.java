@@ -30,6 +30,8 @@ public class EventListener implements Listener {
         ItemStack goldBlock = new ItemStack(Material.GOLD_BLOCK, 1);
 
         event.getPlayer().getInventory().addItem(diamondBlock, goldBlock);
+
+        event.setJoinMessage(plugin.helloMessage);
     }
 
     @EventHandler
